@@ -1,35 +1,34 @@
-// popup.js
 const t = TrelloPowerUp.iframe();
 
-const estimateInput = document.getElementById('estimate');
+const sizeInput = document.getElementById('size');
 const spentInput = document.getElementById('spent');
 const remainingEl = document.getElementById('remaining');
 
 function updateRemaining() {
-  const estimate = parseFloat(estimateInput.value) || 0;
+  const size = parseFloat(sizeInput.value) || 0;
   const spent = parseFloat(spentInput.value) || 0;
-  const remaining = Math.max(estimate - spent, 0);
+  const remaining = Math.max(size - spent, 0);
   remainingEl.textContent = `Remaining: ${remaining}`;
 }
 
-estimateInput.oninput = updateRemaining;
+sizeInput.oninput = updateRemaining;
 spentInput.oninput = updateRemaining;
 
 async function init() {
-  const data = await t.get('card', 'shared');
-  estimateInput.value = data.estimate ?? '';
+  const data = await t.get('card', 'shared') || {};
+  sizeInput.value = data.size ?? '';
   spentInput.value = data.spent ?? '';
   updateRemaining();
 }
 
 document.getElementById('save').onclick = async () => {
-  await t.set('card', 'shared', 'estimate', parseFloat(estimateInput.value) || 0);
+  await t.set('card', 'shared', 'size', parseFloat(sizeInput.value) || 0);
   await t.set('card', 'shared', 'spent', parseFloat(spentInput.value) || 0);
   t.closePopup();
 };
 
 document.getElementById('remove').onclick = async () => {
-  await t.remove('card', 'shared', 'estimate');
+  await t.remove('card', 'shared', 'size');
   await t.remove('card', 'shared', 'spent');
   t.closePopup();
 };
