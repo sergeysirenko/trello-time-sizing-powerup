@@ -20,14 +20,14 @@ TrelloPowerUp.initialize({
 
     if (size !== null) {
       badges.push({
-        text: `Size: ${size}`,
-        color: 'blue'
+        text: `⏱ ${size}`,
+        color: 'red'
       });
     }
 
     if (spent !== null) {
       badges.push({
-        text: `Spent: ${spent}`,
+        text: `⏱ ${spent}`,
         color: 'green'
       });
     }
@@ -44,15 +44,15 @@ TrelloPowerUp.initialize({
     if (size !== null) {
       badges.push({
         title: 'Size',
-        text: `${size}h`,
-        color: 'blue'
+        text: `${size}`,
+        color: 'red'
       });
     }
 
     if (spent !== null) {
       badges.push({
         title: 'Spent',
-        text: `${spent}h`,
+        text: `${spent}`,
         color: 'green'
       });
     }
@@ -62,8 +62,8 @@ TrelloPowerUp.initialize({
 
       badges.push({
         title: 'Remaining',
-        text: `${remaining}h`,
-        color: 'red'
+        text: `${remaining}`,
+        color: 'blue'
       });
     }
 
