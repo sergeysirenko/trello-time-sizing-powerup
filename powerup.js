@@ -13,24 +13,21 @@ TrelloPowerUp.initialize({
     }];
   },
 
-  'card-badges': async function (t) {
-    const data = await t.get('card', 'shared', {
-      size: null,
-      spent: null
-    });
+  'card-badges': async (t) => {
+    const { size = null, spent = null } = await t.get('card', 'shared', {});
 
     const badges = [];
 
-    if (data.size != null) {
+    if (size !== null) {
       badges.push({
-        text: `Size: ${data.size}`,
+        text: `Size: ${size}`,
         color: 'blue'
       });
     }
 
-    if (data.spent != null) {
+    if (spent !== null) {
       badges.push({
-        text: `Spent: ${data.spent}`,
+        text: `Spent: ${spent}`,
         color: 'green'
       });
     }
@@ -38,41 +35,34 @@ TrelloPowerUp.initialize({
     return badges;
   },
 
-  'card-detail-badges': async function (t) {
-    const data = await t.get('card', 'shared', {
-      size: null,
-      spent: null
-    });
 
-    function calcRemaining(size, spent) {
-      if (size == null || spent == null) return null;
-      return Math.max(size - spent, 0);
-    }
-
-    const remaining = calcRemaining(data.size, data.spent);
+  'card-detail-badges': async (t) => {
+    const { size = null, spent = null } = await t.get('card', 'shared', {});
 
     const badges = [];
 
-    if (data.size != null) {
+    if (size !== null) {
       badges.push({
         title: 'Size',
-        text: `${data.size}`,
+        text: `${size}h`,
         color: 'blue'
       });
     }
 
-    if (data.spent != null) {
+    if (spent !== null) {
       badges.push({
         title: 'Spent',
-        text: `${data.spent}`,
+        text: `${spent}h`,
         color: 'green'
       });
     }
 
-    if (remaining != null) {
+    if (size !== null && spent !== null) {
+      const remaining = Math.max(size - spent, 0);
+
       badges.push({
         title: 'Remaining',
-        text: `${remaining}`,
+        text: `${remaining}h`,
         color: 'red'
       });
     }
