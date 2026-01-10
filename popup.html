@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://p.trellocdn.com/power-up.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input {
+      width: 100%;
+    }
+    button {
+      margin-top: 10px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<label>
+  Estimate (hours)
+  <input type="number" step="0.25" id="estimate" />
+</label>
+
+<label>
+  Spent (hours)
+  <input type="number" step="0.25" id="spent" />
+</label>
+
+<button id="save">Save</button>
+
+<script src="./popup.js"></script>
+</body>
+</html>
