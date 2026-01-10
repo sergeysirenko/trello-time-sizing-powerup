@@ -6,7 +6,7 @@ TrelloPowerUp.initialize({
         return t.popup({
           title: 'Estimate / Spent',
           url: './popup.html',
-          height: 220
+          height: 141
         });
       }
     }];
@@ -43,3 +43,4 @@ TrelloPowerUp.initialize({
     });
   }
 });
+
