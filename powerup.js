@@ -14,7 +14,7 @@ TrelloPowerUp.initialize({
   },
 
   'card-badges': async (t) => {
-    const { size = null, spent = null } = await t.get('card', 'shared', {});
+    const { size = null, spent = null } = await t.get('card', 'shared') || {};
 
     const badges = [];
 
@@ -37,7 +37,7 @@ TrelloPowerUp.initialize({
 
 
   'card-detail-badges': async (t) => {
-    const { size = null, spent = null } = await t.get('card', 'shared', {});
+    const { size = null, spent = null } = await t.get('card', 'shared') || {};
 
     const badges = [];
 
