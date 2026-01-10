@@ -1,8 +1,8 @@
 TrelloPowerUp.initialize({
   'card-buttons': function (t) {
     return [{
-      text: 'Card Size',
       icon: 'https://sergeysirenko.github.io/trello-time-sizing-powerup/clock.svg',
+      text: 'Card Size',
       callback: function (t) {
         return t.popup({
           title: 'Card Size',
@@ -21,7 +21,7 @@ TrelloPowerUp.initialize({
     if (size !== null) {
       badges.push({
         text: `⏱ ${size}`,
-        color: 'red'
+        color: 'orange'
       });
     }
 
@@ -45,7 +45,7 @@ TrelloPowerUp.initialize({
       badges.push({
         title: 'Size',
         text: `${size}`,
-        color: 'red'
+        color: 'orange'
       });
     }
 
@@ -70,4 +70,3 @@ TrelloPowerUp.initialize({
     return badges;
   }
 });
-
