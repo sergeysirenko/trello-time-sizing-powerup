@@ -4,7 +4,7 @@ TrelloPowerUp.initialize({
       text: 'Set time',
       callback: function (t) {
         return t.popup({
-          title: 'Estimate / Spent',
+          title: 'Card Size',
           url: './popup.html',
           height: 141
         });
@@ -43,4 +43,5 @@ TrelloPowerUp.initialize({
     });
   }
 });
+
 
