@@ -4,6 +4,7 @@ TrelloPowerUp.initialize({
       text: 'Card Size',
       callback: function (t) {
         return t.popup({
+          icon: 'https://sergeysirenko.github.io/trello-time-sizing-powerup/clock.svg',
           title: 'Card Size',
           url: './popup.html',
           height: 141
@@ -43,6 +44,7 @@ TrelloPowerUp.initialize({
     });
   }
 });
+
 
 
 
