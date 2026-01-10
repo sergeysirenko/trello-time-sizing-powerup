@@ -1,7 +1,7 @@
 TrelloPowerUp.initialize({
   'card-buttons': function (t) {
     return [{
-      text: 'Set time',
+      text: 'Card Size',
       callback: function (t) {
         return t.popup({
           title: 'Card Size',
@@ -43,5 +43,6 @@ TrelloPowerUp.initialize({
     });
   }
 });
+
 
 
