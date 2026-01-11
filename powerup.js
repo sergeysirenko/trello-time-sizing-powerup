@@ -20,14 +20,16 @@ TrelloPowerUp.initialize({
 
     if (size !== null) {
       badges.push({
-        text: `⏱ ${size}`,
+        icon: 'https://sergeysirenko.github.io/trello-time-sizing-powerup/clock.svg',
+        text: `${size}`,
         color: 'orange'
       });
     }
 
     if (spent !== null) {
       badges.push({
-        text: `⏱ ${spent}`,
+        icon: 'https://sergeysirenko.github.io/trello-time-sizing-powerup/clock.svg',
+        text: `${spent}`,
         color: 'green'
       });
     }
@@ -70,3 +72,4 @@ TrelloPowerUp.initialize({
     return badges;
   }
 });
+
