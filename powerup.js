@@ -42,6 +42,21 @@ TrelloPowerUp.initialize({
     const { size = null, spent = null } = await t.get('card', 'shared') || {};
 
     const badges = [];
+    
+    if (!size && !spent) {
+      badges.push({
+        title: 'Size',
+        text: 'Set card size',
+        color: 'green',
+        callback: function(t) {
+          return t.popup({
+            title: 'Card Size',
+            url: './popup.html',
+            height: 141
+          });
+        }
+      });
+    }
 
     if (size !== null) {
       badges.push({
@@ -72,4 +87,3 @@ TrelloPowerUp.initialize({
     return badges;
   }
 });
-
